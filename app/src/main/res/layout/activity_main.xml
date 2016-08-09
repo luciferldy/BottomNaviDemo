@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.luc.bnd.MainActivity">
+
+    <RadioGroup
+        android:id="@+id/bottom_navigator"
+        android:layout_width="match_parent"
+        android:layout_height="48dip"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:background="@color/md_white"
+        android:gravity="center">
+
+        <RadioButton
+            android:id="@+id/bottom_tab_home"
+            style="@style/bottom_navi_item"
+            android:drawableTop="@drawable/bottom_tab_home"
+            android:text="论坛"
+            android:checked="true"/>
+
+        <RadioButton
+            android:id="@+id/bottom_tab_board"
+            style="@style/bottom_navi_item"
+            android:drawableTop="@drawable/bottom_tab_board"
+            android:text="板块"/>
+
+        <RadioButton
+            android:id="@+id/bottom_tab_gallery"
+            style="@style/bottom_navi_item"
+            android:drawableTop="@drawable/bottom_tab_gallery"
+            android:text="相册"/>
+
+        <RadioButton
+            android:id="@+id/bottom_tab_mine"
+            style="@style/bottom_navi_item"
+            android:drawableTop="@drawable/bottom_tab_mine"
+            android:text="我的"/>
+
+    </RadioGroup>
+
+    <View
+        android:id="@+id/main_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1.66dip"
+        android:layout_above="@id/bottom_navigator"
+        android:background="@color/md_grey_400"/>
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/main_divider">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/pager_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+
+</RelativeLayout>
