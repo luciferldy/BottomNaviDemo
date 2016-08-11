@@ -3,49 +3,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.luc.bnd.MainActivity">
 
-    <RadioGroup
-        android:id="@+id/bottom_navigator"
+    <com.luc.bnd.ui.view.BottomNaviBox
+        android:id="@+id/bottom_navi_box"
         android:layout_width="match_parent"
-        android:layout_height="48dip"
+        android:layout_height="60dip"
         android:orientation="horizontal"
         android:layout_alignParentBottom="true"
         android:background="@color/md_white"
         android:gravity="center">
 
-        <RadioButton
+        <com.luc.bnd.ui.view.BottomNaviView
             android:id="@+id/bottom_tab_home"
             style="@style/bottom_navi_item"
-            android:drawableTop="@drawable/bottom_tab_home"
-            android:text="论坛"
-            android:checked="true"/>
+            app:navi_name="首页"
+            app:checked_icon="@drawable/icon_main_home_selected"
+            app:default_icon="@drawable/icon_main_home_normal"
+            app:navi_checked="true"/>
 
-        <RadioButton
+        <com.luc.bnd.ui.view.BottomNaviView
             android:id="@+id/bottom_tab_board"
             style="@style/bottom_navi_item"
-            android:drawableTop="@drawable/bottom_tab_board"
-            android:text="板块"/>
+            app:navi_name="板块"
+            app:checked_icon="@drawable/icon_main_board_selected"
+            app:default_icon="@drawable/icon_main_board_normal"/>
 
-        <RadioButton
+        <com.luc.bnd.ui.view.BottomNaviView
             android:id="@+id/bottom_tab_gallery"
             style="@style/bottom_navi_item"
-            android:drawableTop="@drawable/bottom_tab_gallery"
-            android:text="相册"/>
+            app:navi_name="相册"
+            app:checked_icon="@drawable/icon_main_gallery_selected"
+            app:default_icon="@drawable/icon_main_gallery_normal"/>
 
-        <RadioButton
+        <com.luc.bnd.ui.view.BottomNaviView
             android:id="@+id/bottom_tab_mine"
             style="@style/bottom_navi_item"
-            android:drawableTop="@drawable/bottom_tab_mine"
-            android:text="我的"/>
+            app:navi_name="我的"
+            app:checked_icon="@drawable/icon_main_mine_selected"
+            app:default_icon="@drawable/icon_main_mine_normal"/>
 
-    </RadioGroup>
+    </com.luc.bnd.ui.view.BottomNaviBox>
 
     <View
         android:id="@+id/main_divider"
         android:layout_width="match_parent"
         android:layout_height="1.66dip"
-        android:layout_above="@id/bottom_navigator"
+        android:layout_above="@id/bottom_navi_box"
         android:background="@color/md_grey_400"/>
 
     <FrameLayout

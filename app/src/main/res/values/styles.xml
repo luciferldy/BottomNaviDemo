@@ -11,12 +11,16 @@
     <style name="bottom_navi_item">
         <item name="android:layout_width">0dip</item>
         <item name="android:layout_weight">1</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:button">@null</item>
-        <item name="android:gravity">center</item>
-        <item name="android:drawablePadding">3dip</item>
-        <item name="android:textSize">11dip</item>
-        <item name="android:textColor">@drawable/bottom_tab_text</item>
+        <item name="android:layout_height">match_parent</item>
+        <!--<item name="android:button">@null</item>-->
+        <!--<item name="android:gravity">center</item>-->
+        <!--<item name="android:drawablePadding">3dip</item>-->
+        <!--<item name="android:textSize">11dip</item>-->
+        <!--<item name="android:textColor">@color/bottom_tab_text</item>-->
+    </style>
+
+    <style name="bottom_navi_text">
+
     </style>
 
 </resources>

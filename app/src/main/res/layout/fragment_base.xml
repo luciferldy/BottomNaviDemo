@@ -9,6 +9,7 @@
         android:id="@+id/page_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="24dip"
         android:text="PAGE X"/>
 
 </LinearLayout>
