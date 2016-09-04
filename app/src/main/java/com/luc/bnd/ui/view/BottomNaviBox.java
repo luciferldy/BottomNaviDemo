@@ -3,6 +3,7 @@ package com.luc.bnd.ui.view;
 import android.content.Context;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 
@@ -10,6 +11,8 @@ import android.widget.LinearLayout;
  * Created by Lucifer on 2016/8/11.
  */
 public class BottomNaviBox extends LinearLayout implements ViewPager.OnPageChangeListener{
+
+    private static final String LOG_TAG = BottomNaviBox.class.getSimpleName();
 
     private ViewPager mViewPager;
 
@@ -24,11 +27,6 @@ public class BottomNaviBox extends LinearLayout implements ViewPager.OnPageChang
     public void setViewPager(ViewPager viewPager) {
         this.mViewPager = viewPager;
         mViewPager.addOnPageChangeListener(this);
-    }
-
-    @Override
-    protected void onLayout(boolean changed, int l, int t, int r, int b) {
-        super.onLayout(changed, l, t, r, b);
 
         for (int i = 0; i < getChildCount(); i++) {
             final int position = i;
@@ -43,6 +41,13 @@ public class BottomNaviBox extends LinearLayout implements ViewPager.OnPageChang
     }
 
     @Override
+    protected void onLayout(boolean changed, int l, int t, int r, int b) {
+        super.onLayout(changed, l, t, r, b);
+    }
+
+
+
+    @Override
     /**
      * @position 当前页面
      * @positionOffset 当前页面偏移的百分比
@@ -50,6 +55,7 @@ public class BottomNaviBox extends LinearLayout implements ViewPager.OnPageChang
      */
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
         if (positionOffset  > 0) {
+            Log.i(LOG_TAG, "onPageScrolled, position=" + position);
             ((BottomNaviView) getChildAt(position)).updateAlpha(1 - positionOffset);
             ((BottomNaviView) getChildAt(position + 1)).updateAlpha(positionOffset);
         }
